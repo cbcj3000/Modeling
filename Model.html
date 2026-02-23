@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIGI | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Raleway:wght@300;400;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --primary-red: #d60a0a;
+            --card-beige: #efe8df;
+        }
+
+        body {
+            background-color: var(--card-beige);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        .nav-item {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .text-custom-red {
+            color: var(--primary-red);
+        }
+
+        .nav-container {
+            background-color: var(--card-beige);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .nav-item {
+            position: relative;
+            color: #888;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-align: center;
+            padding: 1rem 0.2rem;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-red);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-item.active {
+            color: var(--primary-red);
+        }
+
+        .nav-item.active::after {
+            width: 80%;
+        }
+
+        .header-box {
+            line-height: 0;
+            margin-bottom: 0;
+        }
+
+        .editorial-banner {
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+            object-position: center 25%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .editorial-banner {
+                height: 25vh;
+            }
+        }
+
+        section,
+        header {
+            scroll-margin-top: 50px;
+        }
+
+        .gallery-img {
+            transition: transform 0.3s ease, opacity 0.5s ease;
+            background-color: #e5ddd3;
+            cursor: pointer;
+        }
+
+        .gallery-img:hover {
+            opacity: 0.8;
+            transform: scale(1.02);
+        }
+
+        .insta-scroll-container {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(320px, 1fr));
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scrollbar-width: none;
+            justify-items: center;
+            align-items: start;
+        }
+
+        .insta-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .insta-wrapper {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: #fff;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .insta-wrapper iframe {
+            width: auto !important;
+            max-width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+            position: relative !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="sticky top-0 z-[100] w-full nav-container">
+        <div class="max-w-5xl mx-auto grid grid-cols-6 items-center">
+            <a href="#home" class="nav-item active">Home</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#details" class="nav-item">Stats</a>
+            <a href="#comp" class="nav-item">Comp</a>
+            <a href="#gallery" class="nav-item">Gallery</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+    </nav>
+
+    <header id="home" class="header-box relative w-full overflow-hidden flex items-end">
+        <img src="https://github.com/cbcj3000/Modeling/blob/main/Banner.jpg?raw=true"
+            class="editorial-banner brightness-95" alt="Banner">
+
+        <div class="absolute w-full bottom-25 md:bottom-38">
+            <div class="max-w-5xl mx-auto px-6 md:px-0">
+                <h1
+                    class="text-5xl md:text-9xl text-custom-red leading-none uppercase tracking-tighter font-black drop-shadow-sm">
+                    GIGI <br class="md:block"> HADID
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto py-12 px-6 md:px-0 space-y-24 md:space-y-32">
+
+        <section id="about" class="section-container text-center py-20">
+            <h2 class="text-custom-red text-3xl md:text-5xl uppercase tracking-widest mb-10 font-bold italic">
+                About
+            </h2>
+            <p class="text-2xl md:text-5xl font-light leading-tight max-w-5xl text-gray-900 mx-auto px-6">
+                Gigi Hadid is a versatile
+
+                <a href="https://www.vogue.co.uk/article/gigi-bella-hadid-cover-march-vogue-2018" target="_blank"
+                    class="relative group text-custom-red border-b-2 border-custom-red hover:text-black transition-colors">
+                    fashion
+                    <span
+                        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-black text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-normal normal-case tracking-normal">
+                        Vogue Cover March 2018
+                    </span>
+                </a>
+                model known for her commanding presence and editorial adaptability. With a career defined by
+                high-fashion
+
+                <a href="https://www.youtube.com/shorts/RFAMlDWUKa4" target="_blank"
+                    class="relative group text-custom-red border-b-2 border-custom-red hover:text-black transition-colors">
+                    runways
+                    <span
+                        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-black text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-normal normal-case tracking-normal">
+                        Watch Runway Evolution
+                    </span>
+                </a>
+                and
+
+                <a href="https://www.havaianas.com/collections/gigi-x-havaianas" target="_blank"
+                    class="relative group text-custom-red border-b-2 border-custom-red hover:text-black transition-colors">
+                    global campaigns
+                    <span
+                        class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-black text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none font-normal normal-case tracking-normal">
+                        Havaianas Global Ambassador
+                    </span>
+                </a>,
+                she brings a blend of athletic grace and sophisticated poise to every frame.
+            </p>
+        </section>
+
+        <section id="details" class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+            <div class="section-container">
+                <h2 class="text-custom-red text-3xl md:text-5xl uppercase italic tracking-widest mb-12 font-bold">
+                    Stats</h2>
+                <div class="section-container">
+                    <div class="space-y-5 text-xl md:text-2xl font-light">
+                        <div class="flex justify-between border-b border-black/5 pb-4">
+                            <span>Height</span>
+                            <span>5'10.5" / 179cm</span>
+                        </div>
+
+                        <div class="flex justify-between border-b border-black/5 pb-4">
+                            <span>Bust</span>
+                            <span>34" / 86cm</span>
+                        </div>
+
+                        <div class="flex justify-between border-b border-black/5 pb-4">
+                            <span>Waist</span>
+                            <span>24" / 61cm</span>
+                        </div>
+
+                        <div class="flex justify-between border-b border-black/5 pb-4">
+                            <span>Hips</span>
+                            <span>35" / 89cm</span>
+                        </div>
+
+                        <div class="flex justify-between border-b border-black/5 pb-4">
+                            <span>Hair</span>
+                            <span>Blonde</span>
+                        </div>
+
+                        <div class="flex justify-between border-b border-black/5 pb-4">
+                            <span>Eyes</span>
+                            <span>Blue/Green</span>
+                        </div>
+
+                        <div class="flex justify-between border-b border-black/5 pb-4">
+                            <span>Shoes</span>
+                            <span>8.5 US / 39 EU</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="https://github.com/cbcj3000/Modeling/blob/main/Stats.jpg?raw=true"
+                class="w-full object-cover shadow-lg" alt="Stats">
+        </section>
+
+        <section id="comp" class="section-container">
+            <div class="flex justify-between items-end mb-16">
+                <h2 class="text-custom-red text-3xl md:text-5xl uppercase italic tracking-widest font-bold">Comp Card
+                </h2>
+                <button onclick="triggerDownload()"
+                    class="text-xs font-bold tracking-widest uppercase border-b-2 border-custom-red pb-1 hover:opacity-50">Download
+                    Card</button>
+            </div>
+            <div class="grid grid-cols-1 gap-4 md:gap-10">
+                <div class="max-w-lg mx-auto w-full">
+                    <img src="https://github.com/cbcj3000/Modeling/blob/main/CompCard.jpg?raw=true"
+                        class="w-full shadow-sm rounded-sm" alt="Gigi Hadid Comp Card">
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section-container">
+            <h2
+                class="text-custom-red text-3xl md:text-5xl uppercase italic tracking-widest mb-8 text-center font-bold">
+                Gallery</h2>
+            <div id="image-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+        </section>
+
+        <section id="contact" class="section-container py-20 text-center">
+            <h2 class="text-custom-red text-7xl md:text-[11rem] uppercase italic tracking-tighter mb-20 font-black">
+                Contact</h2>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-16 md:gap-32 mb-24">
+                <div class="flex flex-col items-center">
+                    <a href="mailto:gigihadid@gmail.com"
+                        class="text-2xl md:text-4xl font-bold border-b-4 border-black hover:border-custom-red transition-all mb-2">EMAIL
+                        ME</a>
+                    <span class="text-xs tracking-widest opacity-60 uppercase font-bold">gigihadid@gmail.com</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <a href="https://www.instagram.com/gigihadid/" target="_blank"
+                        class="text-2xl md:text-4xl font-bold border-b-4 border-black hover:border-custom-red transition-all mb-2">INSTAGRAM</a>
+                    <span class="text-xs tracking-widest opacity-60 uppercase font-bold">@gigihadid</span>
+                </div>
+            </div>
+            <div class="insta-scroll-container mb-24">
+                <div class="insta-wrapper">
+                    <blockquote class="instagram-media" data-instgrm-captioned="false"
+                        data-instgrm-permalink="https://www.instagram.com/p/DQpYa5mkWB6/" data-instgrm-version="14">
+                    </blockquote>
+                </div>
+                <div class="insta-wrapper">
+                    <blockquote class="instagram-media" data-instgrm-captioned="false"
+                        data-instgrm-permalink="https://www.instagram.com/p/DQKiR2ZkWld/" data-instgrm-version="14">
+                    </blockquote>
+                </div>
+                <div class="insta-wrapper">
+                    <blockquote class="instagram-media" data-instgrm-captioned="false"
+                        data-instgrm-permalink="https://www.instagram.com/p/DOWMMfsgBX9/" data-instgrm-version="14">
+                    </blockquote>
+                </div>
+            </div>
+            <p
+                class="text-xl md:text-2xl font-light leading-tight max-w-3xl mx-auto text-gray-900 italic opacity-80 mt-20">
+                I think what's worked better for me personally is I have three goals every day: be nice, work hard and
+                make friends. Those are my daily goals.
+            </p>
+        </section>
+    </div>
+
+    <dialog id="gal_modal" class="modal bg-black/95">
+        <div
+            class="modal-box p-0 bg-transparent shadow-none max-w-none max-h-none w-full h-full flex items-center justify-center relative rounded-none">
+
+            <form method="dialog">
+                <button
+                    class="btn btn-sm btn-circle absolute right-6 top-6 z-[110] bg-white text-black border-none hover:bg-custom-red hover:text-white">✕</button>
+            </form>
+
+            <button onclick="changeImage(-1)"
+                class="absolute left-4 md:left-10 z-[110] text-white hover:text-custom-red transition-colors p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                    stroke="currentColor" class="w-8 h-8 md:w-12 md:h-12">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
+            <button onclick="changeImage(1)"
+                class="absolute right-4 md:right-10 z-[110] text-white hover:text-custom-red transition-colors p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                    stroke="currentColor" class="w-8 h-8 md:w-12 md:h-12">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+
+            <img id="gal_img" src="" class="max-w-[85%] max-h-[90vh] object-contain shadow-2xl select-none">
+        </div>
+        <form method="dialog" class="modal-backdrop"><button>close</button></form>
+    </dialog>
+
+    <script>
+        const username = "cbcj3000";
+        const repo = "Modeling";
+        const folder = "Gallery";
+        const totalImages = 71;
+
+        const grid = document.getElementById('image-grid');
+        const modal = document.getElementById('gal_modal');
+        const modalImg = document.getElementById('gal_img');
+        let activeImageIndex = 1;
+        const validImages = [];
+
+        // GALLERY
+        const fragment = document.createDocumentFragment();
+        for (let i = 1; i <= totalImages; i++) {
+            const img = document.createElement('img');
+            img.src = `https://raw.githubusercontent.com/${username}/${repo}/main/${folder}/${i}.jpg`;
+            img.className = "aspect-[3/4] object-cover gallery-img hidden opacity-0 transition-all duration-500";
+            img.loading = "lazy";
+
+            img.onload = function () {
+                validImages.push(i);
+                this.classList.remove('hidden');
+                setTimeout(() => this.classList.add('opacity-100'), 50);
+            };
+
+            img.onerror = function () {
+                console.warn(`Image ${i} failed to load at ${this.src}`);
+                this.remove();
+            };
+
+            img.onclick = function () { openModal(i); };
+            fragment.appendChild(img);
+        }
+        grid.appendChild(fragment);
+
+        // GALLERY FLIP
+        function openModal(index) {
+            activeImageIndex = index;
+            updateModalImage();
+            modal.showModal();
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateModalImage() {
+            modalImg.src = `https://raw.githubusercontent.com/${username}/${repo}/main/${folder}/${activeImageIndex}.jpg`;
+        }
+
+        function changeImage(step) {
+            let nextIndex = activeImageIndex + step;
+            while (!validImages.includes(nextIndex)) {
+                nextIndex += step;
+                if (nextIndex > totalImages) nextIndex = 1;
+                if (nextIndex < 1) nextIndex = totalImages;
+                if (nextIndex === activeImageIndex) break;
+            }
+
+            activeImageIndex = nextIndex;
+            updateModalImage();
+        }
+
+        modal.addEventListener('close', () => {
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (modal.open) {
+                if (e.key === "ArrowRight") changeImage(1);
+                if (e.key === "ArrowLeft") changeImage(-1);
+            }
+        });
+
+        // COMP CARD DOWNLOAD
+        async function triggerDownload() {
+            const url = `https://raw.githubusercontent.com/cbcj3000/Modeling/main/CompCard.jpg`;
+
+            try {
+                const response = await fetch(url, {
+                    mode: 'cors',
+                });
+
+                if (!response.ok) throw new Error('CORS or Network issue');
+
+                const blob = await response.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+
+                const link = document.createElement('a');
+                link.href = blobUrl;
+                link.download = `GIGI_CompCard.jpg`;
+
+                document.body.appendChild(link);
+                link.click();
+
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(blobUrl);
+            } catch (e) {
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'GIGI_CompCard.jpg';
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+
+        // NAVBAR HIGHLIGHT
+        window.addEventListener('scroll', () => {
+            let current = "home";
+            const sections = document.querySelectorAll('section, header');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current)) {
+                    item.classList.add('active');
+                }
+            });
+        }, { passive: true });
+    </script>
+
+    <script async defer src="https://www.instagram.com/embed.js"></script>
+</body>
+
+</html>
